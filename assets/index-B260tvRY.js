@@ -209,9 +209,9 @@ function setupAttributes(gl, program) {
       vec2 surface1 = computeSurface(strength, scale, vec2(grainedTexture), timeOffset);
   
       uv += refract(vec2(0.0), surface1, 1.0 / ior);
-      
+
       float finalValue = 1.0 - texture(texture1, uv).r;
-      fragColor = vec4(1.0, 1.0, 0.9, finalValue);
+      fragColor = vec4(finalValue);
   }`)});
             program = createProgram(gl, vertexShader, fragmentShader);
 
